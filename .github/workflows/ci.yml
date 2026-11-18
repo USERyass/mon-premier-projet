@@ -1,0 +1,18 @@
+
+name: CI - Vérification JavaScript
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Télécharger le projet
+        uses: actions/checkout@v4
+
+      - name: Vérifier le code JavaScript
+        run: node --check script.js
